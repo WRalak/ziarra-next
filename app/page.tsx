@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      <section className="relative min-h-[720px] md:min-h-[760px] flex flex-col items-center justify-center overflow-hidden">
         <div className="absolute inset-0 hero-bg" />
         <div className="relative z-10 text-center max-w-[860px] px-6">
           <div className="inline-flex items-center gap-2 bg-amber-light/15 border border-amber-light/30 rounded-full px-[18px] py-1.5 mb-7 text-[12px] font-semibold tracking-[0.07em] uppercase text-amber-light animate-fade-up">
@@ -123,13 +123,13 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col gap-4 mt-8">
               {[
-                { icon: '🗺️', bg: '#E8F3EE', title: 'Trip Planning Rooms',       text: 'Build itineraries collaboratively in shared real-time planning spaces.' },
-                { icon: '📸', bg: '#F5E9D0', title: 'Travel Stories & Journals',  text: 'Publish rich travel journals and grow your explorer audience.' },
-                { icon: '🤝', bg: '#FAEAE4', title: 'Community Meetups',          text: 'Find travel buddies and attend Ziarra explorer events near you.' },
-                { icon: '💰', bg: '#EEE8F3', title: 'Creator Monetisation',       text: 'Earn commissions, brand deals, and platform rewards for content.' },
+                { icon: '🗺️', bg: 'bg-[#E8F3EE]', title: 'Trip Planning Rooms',       text: 'Build itineraries collaboratively in shared real-time planning spaces.' },
+                { icon: '📸', bg: 'bg-[#F5E9D0]', title: 'Travel Stories & Journals',  text: 'Publish rich travel journals and grow your explorer audience.' },
+                { icon: '🤝', bg: 'bg-[#FAEAE4]', title: 'Community Meetups',          text: 'Find travel buddies and attend Ziarra explorer events near you.' },
+                { icon: '💰', bg: 'bg-[#EEE8F3]', title: 'Creator Monetisation',       text: 'Earn commissions, brand deals, and platform rewards for content.' },
               ].map(({ icon, bg, title, text }) => (
                 <div key={title} className="flex gap-4">
-                  <div className="w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center text-xl" style={{ background: bg }}>{icon}</div>
+                  <div className={`w-11 h-11 rounded-xl flex-shrink-0 flex items-center justify-center text-xl ${bg}`}>{icon}</div>
                   <div>
                     <h4 className="text-[15px] font-semibold text-ink mb-1">{title}</h4>
                     <p className="text-sm text-muted leading-[1.6]">{text}</p>

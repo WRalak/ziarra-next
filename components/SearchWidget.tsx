@@ -11,15 +11,18 @@ export default function SearchWidget() {
   const dest = activeTab === 'Stays' ? '/stays' : activeTab === 'Experiences' ? '/experiences' : '/destinations'
 
   return (
-    <div className="bg-warm-white/97 rounded-[22px] p-4 sm:p-2 flex flex-col sm:flex-row items-stretch sm:items-center max-w-[780px] w-full shadow-hero animate-fade-up-3 gap-3">
+    <div className="bg-white/95 rounded-[32px] p-4 sm:p-5 border border-slate-200/80 shadow-[0_28px_80px_-35px_rgba(15,23,42,0.35)] max-w-[820px] w-full animate-fade-up-3 gap-4">
       {/* Tabs */}
-      <div className="flex gap-1 px-2 py-1">
+      <div className="flex flex-wrap items-center gap-2 px-3 py-2 rounded-full bg-slate-100/80">
         {tabs.map((t) => (
           <button
             key={t}
+            type="button"
             onClick={() => setActiveTab(t)}
-            className={`px-3.5 py-1.5 rounded-[10px] text-[13px] font-medium whitespace-nowrap transition-all duration-150 ${
-              activeTab === t ? 'bg-forest text-white' : 'text-muted hover:text-ink'
+            className={`rounded-full px-4 py-2 text-sm font-semibold transition-all duration-150 ${
+              activeTab === t
+                ? 'bg-forest text-white shadow-sm'
+                : 'text-slate-600 hover:text-forest'
             }`}
           >
             {t}
@@ -27,35 +30,35 @@ export default function SearchWidget() {
         ))}
       </div>
 
-      <div className="w-px h-[42px] bg-ink/10 flex-shrink-0" />
-
-      {/* Fields */}
-      <div className="flex flex-1 flex-col sm:flex-row items-stretch sm:items-center">
+      <div className="grid gap-3 sm:grid-cols-[1.2fr_1fr_1fr_0.7fr] items-end">
         {[
-          { label: 'Where to',  placeholder: 'Destination…' },
-          { label: 'Check in',  placeholder: 'Add dates' },
-          { label: 'Guests',    placeholder: 'Add travellers' },
-          { label: 'Category',  placeholder: 'Hotel, Glamping…' },
-        ].map(({ label, placeholder }, i, arr) => (
-          <div key={label} className={`flex-1 px-4 ${i < arr.length - 1 ? 'border-b border-ink/10 pb-4 mb-4 sm:border-b-0 sm:pb-0 sm:mb-0 sm:border-r sm:border-ink/10' : ''}`}>
-            <div className="text-[10px] font-semibold tracking-[0.07em] uppercase text-muted mb-0.5">{label}</div>
+          { label: 'Where to', placeholder: 'Search destination' },
+          { label: 'Check in', placeholder: 'Add dates' },
+          { label: 'Guests', placeholder: 'Add travellers' },
+          { label: 'Category', placeholder: 'Hotel, Glamping…' },
+        ].map(({ label, placeholder }) => (
+          <div key={label} className="min-w-0">
+            <div className="text-[10px] font-semibold tracking-[0.12em] uppercase text-slate-500 mb-2">
+              {label}
+            </div>
             <input
-              className="text-sm font-medium text-ink bg-transparent border-none outline-none w-full placeholder:text-muted placeholder:font-normal"
+              type="text"
+              className="text-sm font-medium text-slate-900 bg-white border border-slate-200 rounded-[26px] px-4 py-3 w-full shadow-sm outline-none transition duration-200 placeholder:text-slate-400 focus:border-forest focus:ring-2 focus:ring-forest/15"
               placeholder={placeholder}
             />
           </div>
         ))}
-      </div>
 
-      {/* Search btn */}
-      <button
-        onClick={() => router.push(dest)}
-        className="flex-shrink-0 ml-0 sm:ml-2 w-full sm:w-[52px] h-[52px] rounded-[14px] bg-coral hover:bg-[#c04e2a] flex items-center justify-center transition-colors duration-200"
-      >
-        <svg className="w-5 h-5 stroke-white fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="11" cy="11" r="7" /><path d="m21 21-4.35-4.35" />
-        </svg>
-      </button>
+        <button
+          type="button"
+          onClick={() => router.push(dest)}
+          className="w-full h-[60px] rounded-[26px] bg-forest text-white font-semibold shadow-[0_16px_40px_-20px_rgba(34,197,94,0.85)] hover:bg-[#1f6f44] transition-colors duration-200 flex items-center justify-center"
+        >
+          <svg className="w-5 h-5 stroke-white fill-none stroke-2" viewBox="0 0 24 24" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="11" cy="11" r="7" /><path d="m21 21-4.35-4.35" />
+          </svg>
+        </button>
+      </div>
     </div>
   )
 }

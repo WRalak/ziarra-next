@@ -77,16 +77,16 @@ interface PageHeroProps {
 
 export function PageHero({ img, breadcrumb, title, sub }: PageHeroProps) {
   return (
-    <div className="relative h-[300px] md:h-[360px] lg:h-[400px] flex items-end overflow-hidden">
+    <div className="relative h-[260px] md:h-[300px] lg:h-[340px] flex items-end overflow-hidden">
       <Image src={img} alt="" fill className="object-cover" priority sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-t from-forest/88 to-black/10" />
-      <div className="relative z-10 px-6 sm:px-12 pb-11">
+      <div className="relative z-10 px-6 sm:px-12 pb-10">
         <p className="text-[13px] text-white/45 mb-3.5">
           <Link href="/" className="text-white/65 hover:text-amber-light transition-colors">Home</Link>
           {' / '}{breadcrumb}
         </p>
-        <h1 className="font-serif text-[clamp(34px,4.5vw,58px)] font-light text-white tracking-tight leading-[1.1] mb-2.5">{title}</h1>
-        <p className="text-[17px] text-white/68 max-w-[520px]">{sub}</p>
+        <h1 className="font-serif text-[clamp(32px,4vw,52px)] font-light text-white tracking-tight leading-[1.1] mb-2.5">{title}</h1>
+        <p className="text-[16px] text-white/68 max-w-[520px]">{sub}</p>
       </div>
     </div>
   )
