@@ -149,6 +149,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── GAMIFICATION ── */}
+      <section className="bg-warm-white py-[88px] px-6 sm:px-12">
+        <div className="max-w-[1240px] mx-auto text-center mb-14">
+          <p className="section-label">Travel Gamification</p>
+          <h2 className="font-serif text-[clamp(32px,3.8vw,50px)] font-light text-ink tracking-tight">
+            Earn points, unlock badges, and level up your explorer status.
+          </h2>
+          <p className="text-base text-muted mt-3 leading-[1.75] max-w-[620px] mx-auto">
+            Ziarra rewards every adventure with achievements, leaderboards, and milestone unlocks to keep your travel momentum going.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
+          {[
+            { icon: '🏆', title: 'Explorer Score',    text: 'Track your journey with points for bookings, reviews, and shared stories.' },
+            { icon: '🎖️', title: 'Achievement Badges', text: 'Collect badges for first-time destinations, local experiences, and community milestones.' },
+            { icon: '📈', title: 'Level Progress',    text: 'Move up through explorer tiers to unlock exclusive perks and status rewards.' },
+            { icon: '🎁', title: 'Reward Drops',      text: 'Redeem travel credits, partner offers, and surprise gifts for active explorers.' },
+          ].map(({ icon, title, text }) => (
+            <div key={title} className="rounded-[24px] border border-ink/10 bg-white p-7 text-left shadow-card hover:-translate-y-1 transition-transform duration-300">
+              <div className="w-14 h-14 rounded-[18px] flex items-center justify-center text-2xl bg-amber-pale text-amber mb-5">{icon}</div>
+              <h3 className="font-serif text-lg font-medium text-ink mb-2">{title}</h3>
+              <p className="text-sm text-muted leading-[1.75]">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* ── DESTINATIONS ── */}
       <section className="bg-warm-white py-[88px] px-4 sm:px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto">

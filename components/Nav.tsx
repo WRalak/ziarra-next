@@ -17,6 +17,7 @@ const links = [
 export default function Nav() {
   const path = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const loggedIn = path?.startsWith('/profile')
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[999] bg-forest/95 backdrop-blur-lg border-b border-white/[0.07]">
@@ -50,19 +51,49 @@ export default function Nav() {
 
         {/* Desktop Auth */}
         <div className="hidden sm:flex items-center gap-2.5">
-          <Link
-            href="/login"
-            className="px-4 py-2 border border-white/[0.22] rounded-full text-[13px] text-white/85 hover:border-white/55 hover:text-white transition-all duration-200"
-          >
-            Log in
-          </Link>
-          <Link
-            href="/signup"
-            className="px-5 py-2 rounded-full text-[13px] font-semibold text-forest bg-amber-light hover:bg-amber transition-all duration-200"
-          >
-            Sign up free
-          </Link>
+          {loggedIn ? (
+            <>
+              <button
+                type="button"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.22] bg-white/5 text-white/85 hover:bg-white/10 transition"
+                aria-label="Notifications"
+              >
+                🔔
+              </button>
+              <Link
+                href="/login"
+                className="px-4 py-2 rounded-full text-[13px] font-semibold text-forest bg-amber-light hover:bg-amber transition-all duration-200"
+              >
+                Log out
+              </Link>
+            </>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="px-4 py-2 border border-white/[0.22] rounded-full text-[13px] text-white/85 hover:border-white/55 hover:text-white transition-all duration-200"
+              >
+                Log in
+              </Link>
+              <Link
+                href="/signup"
+                className="px-5 py-2 rounded-full text-[13px] font-semibold text-forest bg-amber-light hover:bg-amber transition-all duration-200"
+              >
+                Sign up free
+              </Link>
+            </>
+          )}
         </div>
+
+        {loggedIn && (
+          <button
+            type="button"
+            className="sm:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.12] bg-white/5 text-white/90 transition hover:bg-white/10"
+            aria-label="Notifications"
+          >
+            🔔
+          </button>
+        )}
 
         {/* Mobile toggle */}
         <button
@@ -108,20 +139,41 @@ export default function Nav() {
             </Link>
           ))}
           <div className="flex flex-col gap-2 pt-2 border-t border-white/[0.08]">
-            <Link
-              href="/login"
-              onClick={() => setMenuOpen(false)}
-              className="px-4 py-3 rounded-full border border-white/[0.22] text-[13px] text-white/85 hover:border-white/55 hover:text-white transition-all duration-200 text-center"
-            >
-              Log in
-            </Link>
-            <Link
-              href="/signup"
-              onClick={() => setMenuOpen(false)}
-              className="px-4 py-3 rounded-full text-[13px] font-semibold text-forest bg-amber-light hover:bg-amber transition-all duration-200 text-center"
-            >
-              Sign up free
-            </Link>
+            {loggedIn ? (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-3 rounded-full border border-white/[0.22] text-[13px] text-white/85 hover:border-white/55 hover:text-white transition-all duration-200 text-center"
+                >
+                  Notifications
+                </button>
+                <Link
+                  href="/login"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-3 rounded-full text-[13px] font-semibold text-forest bg-amber-light hover:bg-amber transition-all duration-200 text-center"
+                >
+                  Log out
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-3 rounded-full border border-white/[0.22] text-[13px] text-white/85 hover:border-white/55 hover:text-white transition-all duration-200 text-center"
+                >
+                  Log in
+                </Link>
+                <Link
+                  href="/signup"
+                  onClick={() => setMenuOpen(false)}
+                  className="px-4 py-3 rounded-full text-[13px] font-semibold text-forest bg-amber-light hover:bg-amber transition-all duration-200 text-center"
+                >
+                  Sign up free
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>

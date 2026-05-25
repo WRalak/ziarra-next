@@ -18,7 +18,7 @@ export default function SignupPage() {
           <p className="text-[15px] text-muted mb-8">Start your Africa journey — it&apos;s completely free.</p>
 
           <div className="grid grid-cols-2 gap-2.5 mb-5">
-            {[['🌐','Google'],['📘','Facebook']].map(([icon, label]) => (
+            {[['🌐','Google'],['','Apple']].map(([icon, label]) => (
               <Link key={label} href="/profile" className="flex items-center justify-center gap-2 py-2.5 border border-ink/10 rounded-xl text-sm font-medium text-ink bg-white hover:bg-cream transition-colors">
                 {icon} {label}
               </Link>

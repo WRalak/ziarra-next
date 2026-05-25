@@ -37,6 +37,19 @@ export default function ProfilePage() {
                 </div>
               ))}
             </div>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {[
+                { title: 'Explorer Level', value: 'Level 8', note: 'Elite African Voyager' },
+                { title: 'Streak', value: '12 days', note: 'Story posts & reviews active' },
+                { title: 'Badges', value: '14 earned', note: 'Milestones unlocked' },
+              ].map(({ title, value, note }) => (
+                <div key={title} className="rounded-3xl border border-ink/10 bg-white p-4 shadow-card">
+                  <div className="text-[11px] uppercase tracking-[0.15em] text-muted mb-3">{title}</div>
+                  <div className="font-serif text-2xl font-medium text-ink mb-2">{value}</div>
+                  <div className="text-sm text-muted leading-[1.6]">{note}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
