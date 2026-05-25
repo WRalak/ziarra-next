@@ -9,7 +9,7 @@ const links = [
   { href: '/destinations', label: 'Destinations' },
   { href: '/community',    label: 'Community' },
   { href: '/planner',      label: 'Trip Planner' },
-  { href: '/partner',      label: 'Partner' },
+  { href: '/partner',      label: 'Be a Patner' },
   { href: '/about',        label: 'About' },
 ]
 
@@ -34,6 +34,8 @@ export default function Nav() {
             className={`text-[13.5px] px-3 py-1.5 rounded-lg transition-all duration-200 ${
               path === href
                 ? 'text-amber-light bg-white/[0.06]'
+                : href === '/partner'
+                ? 'text-amber-light hover:bg-white/[0.06]'
                 : 'text-white/70 hover:text-amber-light hover:bg-white/[0.06]'
             }`}
           >
