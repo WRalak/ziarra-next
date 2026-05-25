@@ -4,10 +4,10 @@ export const metadata = { title: 'Sign Up — Ziarra' }
 
 export default function SignupPage() {
   return (
-    <div className="grid grid-cols-2 min-h-[calc(100vh-72px)]">
-      <div className="relative overflow-hidden">
+    <div className="grid grid-cols-1 md:grid-cols-2 min-h-[calc(100vh-72px)]">
+      <div className="relative overflow-hidden min-h-[320px]">
         <Image src="/picc.jpg" alt="" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-br from-forest/80 to-forest/40 flex flex-col justify-end p-[52px]">
+        <div className="absolute inset-0 bg-gradient-to-br from-forest/80 to-forest/40 flex flex-col justify-end p-8 sm:p-[52px]">
           <p className="font-serif text-[28px] font-light text-white leading-[1.35] mb-3">Join <em className="italic text-amber-light">320,000+</em> travellers already exploring Africa with Ziarra.</p>
           <p className="text-sm text-white/45">Free forever · No credit card required</p>
         </div>

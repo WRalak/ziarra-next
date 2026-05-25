@@ -17,6 +17,7 @@ const links = [
 export default function Nav() {
   const path = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showNotifications, setShowNotifications] = useState(false)
   const loggedIn = path?.startsWith('/profile')
 
   return (
@@ -55,8 +56,10 @@ export default function Nav() {
             <>
               <button
                 type="button"
+                onClick={() => setShowNotifications((open) => !open)}
+                aria-expanded={showNotifications ? 'true' : 'false'}
+                aria-label={showNotifications ? 'Hide notifications' : 'Show notifications'}
                 className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/[0.22] bg-white/5 text-white/85 hover:bg-white/10 transition"
-                aria-label="Notifications"
               >
                 🔔
               </button>
@@ -119,9 +122,9 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`sm:hidden overflow-hidden transition-[max-height] duration-300 ${menuOpen ? 'max-h-[420px]' : 'max-h-0'}`}
+        className={`sm:hidden overflow-hidden transition-[max-height] duration-300 ${menuOpen ? 'max-h-[calc(100vh-72px)]' : 'max-h-0'}`}
       >
-        <div className="flex flex-col gap-2 px-4 pb-4">
+        <div className="flex flex-col gap-2 px-4 pb-4 overflow-y-auto max-h-[calc(100vh-72px)]">
           {links.map(({ href, label }) => (
             <Link
               key={href}
@@ -177,6 +180,36 @@ export default function Nav() {
           </div>
         </div>
       </div>
+
+      {loggedIn && showNotifications && (
+        <div className="absolute right-4 top-[72px] z-[1000] w-[calc(100vw-32px)] max-w-[360px] rounded-3xl border border-white/[0.12] bg-forest/95 p-4 shadow-2xl backdrop-blur-xl text-white sm:right-12">
+          <div className="flex items-center justify-between gap-3 pb-3 border-b border-white/[0.08]">
+            <div>
+              <p className="text-sm font-semibold">Notifications</p>
+              <p className="text-[13px] text-white/60">Latest updates for your trips.</p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowNotifications(false)}
+              className="text-sm text-white/60 hover:text-white"
+              aria-label="Close notifications"
+            >
+              ✕
+            </button>
+          </div>
+          <div className="mt-4 space-y-3">
+            <div className="rounded-2xl bg-white/5 p-3">
+              <p className="text-sm font-medium text-white">No new notifications</p>
+              <p className="text-[13px] text-white/60 mt-1">Check back for trip updates and messages from the community.</p>
+            </div>
+          </div>
+          <div className="mt-4 text-right">
+            <Link href="/profile" className="text-sm font-medium text-amber-light hover:text-amber">
+              View all notifications →
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   )
 }
