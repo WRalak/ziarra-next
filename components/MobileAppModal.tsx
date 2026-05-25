@@ -23,14 +23,6 @@ export default function MobileAppModal() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={openModal}
-        className="mt-8 inline-flex items-center justify-center rounded-full bg-white/95 px-7 py-3 text-sm font-semibold text-ink shadow-lg shadow-slate-900/10 transition hover:bg-white"
-      >
-        Download Ziarra Mobile
-      </button>
-
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/55 backdrop-blur-sm">
           <div className="relative w-full max-w-[560px] rounded-[32px] bg-white shadow-[0_30px_80px_-35px_rgba(15,23,42,0.55)] ring-1 ring-slate-200">
