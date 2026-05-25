@@ -11,7 +11,6 @@ const links = [
   { href: '/community',    label: 'Community' },
   { href: '/planner',      label: 'Trip Planner' },
   { href: '/partner',      label: 'Be a Partner' },
-  { href: '/admin',        label: 'Admin' },
   { href: '/about',        label: 'About' },
 ]
 
