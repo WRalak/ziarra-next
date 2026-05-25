@@ -1,12 +1,12 @@
 {
-  "/destinations/page": "app/destinations/page.js",
+  "/events/[id]/page": "app/events/[id]/page.js",
+  "/events/page": "app/events/page.js",
   "/stays/page": "app/stays/page.js",
   "/page": "app/page.js",
-  "/community/page": "app/community/page.js",
+  "/destinations/page": "app/destinations/page.js",
   "/experiences/page": "app/experiences/page.js",
-  "/partner/page": "app/partner/page.js",
+  "/community/page": "app/community/page.js",
   "/planner/page": "app/planner/page.js",
   "/about/page": "app/about/page.js",
-  "/login/page": "app/login/page.js",
-  "/signup/page": "app/signup/page.js"
+  "/partner/page": "app/partner/page.js"
 }

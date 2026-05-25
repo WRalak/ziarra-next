@@ -7,9 +7,11 @@ interface BookingWidgetProps {
   rating: number
   reviews: number
   cta: string
+  toastMsg?: string
+  quantity?: number
 }
 
-export default function BookingWidget({ price, unit, rating, reviews, cta }: BookingWidgetProps) {
+export default function BookingWidget({ price, unit, rating, reviews, cta, toastMsg, quantity = 1 }: BookingWidgetProps) {
   const [toast, setToast] = useState(false)
 
   const handleBook = () => {
@@ -17,9 +19,14 @@ export default function BookingWidget({ price, unit, rating, reviews, cta }: Boo
     setTimeout(() => setToast(false), 3000)
   }
 
+  const amount = price * quantity
+  const serviceFee = Math.round(amount * 0.35)
+  const total = amount + serviceFee
+  const unitLabel = `${unit}${quantity === 1 ? '' : 's'}`
+
   return (
     <>
-      <div className="booking-widget">
+      <div className="booking-widget lg:sticky lg:top-[88px]">
         <p className="font-serif text-[32px] font-medium text-ink mb-1">
           ${price.toLocaleString()} <span className="text-base font-light font-sans text-muted">/{unit}</span>
         </p>
@@ -58,16 +65,16 @@ export default function BookingWidget({ price, unit, rating, reviews, cta }: Boo
 
         <div className="border-t border-ink/10 mt-3.5 pt-3.5 space-y-3">
           <div className="flex justify-between text-sm font-semibold">
-            <span>${price.toLocaleString()} × 5 nights</span>
-            <span>${(price * 5).toLocaleString()}</span>
+            <span>${price.toLocaleString()} × {quantity} {unitLabel}</span>
+            <span>${amount.toLocaleString()}</span>
           </div>
           <div className="flex justify-between text-sm font-semibold">
             <span>Ziarra service fee</span>
-            <span>${Math.round(price * 0.35)}</span>
+            <span>${serviceFee.toLocaleString()}</span>
           </div>
           <div className="flex justify-between text-[15px] font-bold border-t border-ink/10 pt-3">
             <span>Total</span>
-            <span>${(price * 5 + Math.round(price * 0.35)).toLocaleString()}</span>
+            <span>${total.toLocaleString()}</span>
           </div>
         </div>
       </div>
@@ -75,7 +82,7 @@ export default function BookingWidget({ price, unit, rating, reviews, cta }: Boo
       {/* Toast */}
       {toast && (
         <div className="fixed bottom-7 right-7 bg-forest text-white rounded-2xl px-5 py-3.5 text-sm font-medium shadow-xl z-50 animate-fade-up">
-          ✅ Booking confirmed! Check your email.
+          {toastMsg ?? '✅ Booking confirmed! Check your email.'}
         </div>
       )}
     </>

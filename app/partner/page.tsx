@@ -4,7 +4,7 @@ export const metadata = { title: 'Partner With Us — Ziarra' }
 export default function PartnerPage() {
   return (
     <>
-      <div className="bg-forest relative overflow-hidden px-12 py-[120px]">
+      <div className="bg-forest relative overflow-hidden px-4 sm:px-6 lg:px-12 py-[100px] sm:py-[120px]">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: 'repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%)', backgroundSize: '20px 20px' }} />
         <div className="relative z-10 max-w-[700px]">
           <h1 className="font-serif text-[clamp(44px,6vw,80px)] font-light text-white leading-[1.1] mb-4">Grow your <em className="italic text-amber-light">tourism business</em> with Ziarra</h1>
@@ -17,10 +17,10 @@ export default function PartnerPage() {
       </div>
 
       {/* Steps */}
-      <section className="bg-warm-white px-12 py-[88px]">
+      <section className="bg-warm-white px-4 sm:px-6 lg:px-12 py-[88px]">
         <div className="max-w-[1240px] mx-auto">
           <div className="text-center mb-12"><p className="section-label">How It Works</p><h2 className="font-serif text-[clamp(32px,3.8vw,50px)] font-light text-ink tracking-tight">Start earning in <em className="italic text-forest-light">3 simple steps</em></h2></div>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {[
               { n: '1', cls: 'bg-amber-pale text-amber border-2 border-amber-light', title: 'Create Your Listing',  text: 'Set up your property or experience page in under 30 minutes with our guided onboarding wizard.' },
               { n: '2', cls: 'bg-[#E8F3EE] text-forest-mid border-2 border-forest-light', title: 'Get Verified',         text: 'Our local team verifies your listing for quality, accuracy, and safety. Most partners go live within 48 hours.' },
@@ -37,10 +37,10 @@ export default function PartnerPage() {
       </section>
 
       {/* Benefits */}
-      <section className="bg-cream px-12 py-[88px]">
+      <section className="bg-cream px-4 sm:px-6 lg:px-12 py-[88px]">
         <div className="max-w-[1240px] mx-auto">
           <div className="mb-11"><p className="section-label">Why Ziarra</p><h2 className="font-serif text-[clamp(32px,3.8vw,50px)] font-light text-ink tracking-tight">Built for African <em className="italic text-forest-light">hospitality</em></h2></div>
-          <div className="grid grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {[
               { icon:'🌍', title:'Pan-African Reach',    text:'Access travellers from 54 countries across Africa plus an international audience actively seeking authentic experiences.' },
               { icon:'📊', title:'Smart Analytics',      text:'Track views, booking conversion, revenue trends, and seasonal demand — all in one real-time dashboard.' },
@@ -60,7 +60,7 @@ export default function PartnerPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-forest px-12 py-[88px] text-center">
+      <section className="bg-forest px-4 sm:px-6 lg:px-12 py-[88px] text-center">
         <div className="max-w-[560px] mx-auto">
           <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-amber-light mb-4">Ready to get started?</p>
           <h2 className="font-serif text-[clamp(32px,3.8vw,46px)] font-light text-white tracking-tight mb-4">Join 4,800+ <em className="italic text-amber-light">active partners</em></h2>

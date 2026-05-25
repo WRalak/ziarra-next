@@ -8,14 +8,14 @@ export default function ProfilePage() {
     <div>
       {/* Cover */}
       <div className="bg-forest h-60 relative overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1400&q=60" alt="" fill className="object-cover opacity-35" />
+        <Image src="/pic.jpg" alt="" fill className="object-cover opacity-35" />
       </div>
 
       {/* Body */}
-      <div className="max-w-[960px] mx-auto px-12 -mt-[60px] relative z-10 pb-16">
-        <div className="flex items-end gap-5 mb-6">
+      <div className="max-w-[960px] mx-auto px-4 sm:px-6 lg:px-12 -mt-[60px] relative z-10 pb-16">
+        <div className="flex flex-col gap-5 mb-6 lg:flex-row lg:items-end">
           <div className="w-[120px] h-[120px] rounded-full border-4 border-white overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.18)] flex-shrink-0">
-            <Image src="https://i.pravatar.cc/240?img=47" alt="Amira" width={120} height={120} className="object-cover" />
+            <Image src="/picc.jpg" alt="Amira" width={120} height={120} className="object-cover" />
           </div>
           <div className="flex-1">
             <div className="flex items-start justify-between flex-wrap gap-3">
@@ -29,7 +29,7 @@ export default function ProfilePage() {
               </div>
             </div>
             <p className="text-sm text-muted mt-2.5 max-w-[480px]">Passionate solo traveller & food storyteller. 26 countries. Swahili coast obsessed. Sharing the Africa that changed my life. ✨</p>
-            <div className="flex gap-8 mt-5 pt-5 border-t border-ink/10">
+            <div className="flex flex-wrap gap-8 mt-5 pt-5 border-t border-ink/10">
               {[['26','Countries'],['134','Stories'],['48.2K','Followers'],['312','Following']].map(([num, lbl]) => (
                 <div key={lbl}>
                   <div className="font-serif text-2xl font-medium text-ink">{num}</div>
@@ -49,11 +49,11 @@ export default function ProfilePage() {
           ))}
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {[
-            { img: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=400&q=80', title: 'Diani at Golden Hour',         meta: '❤️ 244 · 💬 38 · 3 hrs ago' },
-            { img: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=400&q=80', title: 'Safari Season Packing Guide',  meta: '❤️ 891 · 💬 112 · 2 days ago' },
-            { img: 'https://images.unsplash.com/photo-1585155784229-aff921ccfa53?w=400&q=80', title: 'Best Swahili Food in Mombasa', meta: '❤️ 1.2K · 💬 204 · 1 week ago' },
+              { img: '/pic.jpg', title: 'Diani at Golden Hour',         meta: '❤️ 244 · 💬 38 · 3 hrs ago' },
+              { img: '/picc.jpg', title: 'Safari Season Packing Guide',  meta: '❤️ 891 · 💬 112 · 2 days ago' },
+              { img: '/pic.jpg', title: 'Best Swahili Food in Mombasa', meta: '❤️ 1.2K · 💬 204 · 1 week ago' },
           ].map(({ img, title, meta }) => (
             <div key={title} className="ziarra-card">
               <div className="relative h-[180px]">

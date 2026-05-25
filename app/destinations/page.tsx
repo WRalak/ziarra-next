@@ -8,15 +8,15 @@ export default function DestinationsPage() {
   return (
     <>
       <PageHero
-        img="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=1400&q=80"
+        img="/pic.jpg"
         breadcrumb="Destinations"
         title={<>The continent <em className="italic text-amber-light">awaits</em></>}
         sub="Explore 54 nations, thousands of hidden gems, and the world's most extraordinary landscapes."
       />
 
-      <section className="px-12 py-11">
+      <section className="px-4 sm:px-6 lg:px-12 py-11">
         <FilterChips options={['All Africa','East Africa','West Africa','North Africa','Southern Africa','Islands','Beyond Africa']} />
-        <div className="grid grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 mt-8">
           {DESTINATIONS.map((d) => <DestCard key={d.name} {...d} />)}
         </div>
       </section>

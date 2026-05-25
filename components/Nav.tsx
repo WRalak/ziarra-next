@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 const links = [
   { href: '/stays',        label: 'Stays' },
   { href: '/experiences',  label: 'Experiences' },
+  { href: '/events',       label: 'Events' },
   { href: '/destinations', label: 'Destinations' },
   { href: '/community',    label: 'Community' },
   { href: '/planner',      label: 'Trip Planner' },
@@ -15,7 +16,7 @@ const links = [
 export default function Nav() {
   const path = usePathname()
   return (
-    <nav className="fixed top-0 left-0 right-0 z-[999] flex items-center justify-between px-12 h-[72px] bg-forest/95 backdrop-blur-lg border-b border-white/[0.07]">
+    <nav className="fixed top-0 left-0 right-0 z-[999] flex flex-wrap items-center justify-between gap-3 px-4 sm:px-6 lg:px-12 py-3 bg-forest/95 backdrop-blur-lg border-b border-white/[0.07]">
       {/* Logo */}
       <Link href="/" className="flex items-center gap-2.5">
         <div className="w-[38px] h-[38px] bg-amber-light rounded-[10px] flex items-center justify-center font-serif text-xl font-bold text-forest">
@@ -25,7 +26,7 @@ export default function Nav() {
       </Link>
 
       {/* Links */}
-      <div className="flex items-center gap-1">
+      <div className="flex flex-wrap items-center gap-1">
         {links.map(({ href, label }) => (
           <Link
             key={href}

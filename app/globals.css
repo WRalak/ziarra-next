@@ -59,8 +59,7 @@
 
   /* ── Booking widget ── */
   .booking-widget {
-    @apply bg-white rounded-[22px] p-7 border border-ink/10
-           shadow-widget sticky top-[88px];
+    @apply bg-white rounded-[22px] p-7 border border-ink/10 shadow-widget;
   }
 
   /* ── Post card ── */

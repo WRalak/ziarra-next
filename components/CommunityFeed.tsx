@@ -4,15 +4,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const POSTS = [
-  { id: 1, author: 'Amira Hassan', handle: '@amira.explores', location: 'Diani Beach, Kenya', time: '2 hours ago', img: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?w=800&q=75', text: 'Diani at golden hour never gets old. 🌅 Found this quiet stretch of beach 2km south of the main strip — no crowds, just powdery white sand and warm Indian Ocean. Full journal dropping tomorrow!', tags: ['#DianiBeach','#KenyaTravel','#SoloTravel'], likes: 244, comments: 38, avatar: 'https://i.pravatar.cc/80?img=5' },
-  { id: 2, author: 'Kofi Mensah', handle: '@kofi.west', location: 'Accra, Ghana', time: '5 hours ago', img: null, text: 'Pro tip for anyone flying into Kotoka International: skip the taxi queue entirely. Use the Ziarra transfer booking — my driver was there before I cleared customs, and the car had chilled water and a phone charger. 🙌 Ghana is going off this year — book early!', tags: [], likes: 118, comments: 22, avatar: 'https://i.pravatar.cc/80?img=11' },
-  { id: 3, author: 'Leila Osei', handle: '@leila.nomad', location: 'Marrakech, Morocco', time: 'Yesterday', img: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=800&q=75', text: "Three days in the Medina and I still find new streets every morning. Had the best harira of my life in a tiny riad just off Jemaa el-Fna. The couple running it have been there for 40 years. These are the moments that make travel worth everything.", tags: [], likes: 330, comments: 67, avatar: 'https://i.pravatar.cc/80?img=29' },
+  { id: 1, author: 'Amira Hassan', handle: '@amira.explores', location: 'Diani Beach, Kenya', time: '2 hours ago', img: '/pic.jpg', text: 'Diani at golden hour never gets old. 🌅 Found this quiet stretch of beach 2km south of the main strip — no crowds, just powdery white sand and warm Indian Ocean. Full journal dropping tomorrow!', tags: ['#DianiBeach','#KenyaTravel','#SoloTravel'], likes: 244, comments: 38, avatar: '/picc.jpg' },
+  { id: 2, author: 'Kofi Mensah', handle: '@kofi.west', location: 'Accra, Ghana', time: '5 hours ago', img: null, text: 'Pro tip for anyone flying into Kotoka International: skip the taxi queue entirely. Use the Ziarra transfer booking — my driver was there before I cleared customs, and the car had chilled water and a phone charger. 🙌 Ghana is going off this year — book early!', tags: [], likes: 118, comments: 22, avatar: '/pic.jpg' },
+  { id: 3, author: 'Leila Osei', handle: '@leila.nomad', location: 'Marrakech, Morocco', time: 'Yesterday', img: '/picc.jpg', text: "Three days in the Medina and I still find new streets every morning. Had the best harira of my life in a tiny riad just off Jemaa el-Fna. The couple running it have been there for 40 years. These are the moments that make travel worth everything.", tags: [], likes: 330, comments: 67, avatar: '/pic.jpg' },
 ]
 
 const TRENDING = [
-  { name: 'Kenya',   count: '4,218 posts this week', img: 'https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=80&q=70' },
-  { name: 'Morocco', count: '3,107 posts this week', img: 'https://images.unsplash.com/photo-1489392191049-fc10c97e64b6?w=80&q=70' },
-  { name: 'Rwanda',  count: '1,842 posts this week', img: 'https://images.unsplash.com/photo-1590489168135-e5b6a535c157?w=80&q=70' },
+  { name: 'Kenya',   count: '4,218 posts this week', img: '/pic.jpg' },
+  { name: 'Morocco', count: '3,107 posts this week', img: '/picc.jpg' },
+  { name: 'Rwanda',  count: '1,842 posts this week', img: '/pic.jpg' },
 ]
 
 const MEMBERS = [
@@ -26,7 +26,7 @@ export default function CommunityFeed() {
   const [followed, setFollowed] = useState<Record<string, boolean>>({})
 
   return (
-    <div className="grid grid-cols-[1fr_308px] gap-7 px-12 py-11 max-w-[1280px] mx-auto">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_308px] gap-7 px-4 sm:px-6 lg:px-12 py-11 max-w-[1280px] mx-auto">
       {/* Feed */}
       <div>
         {/* Composer */}

@@ -33,9 +33,9 @@ export default function PlannerClient() {
   }
 
   return (
-    <div className="grid grid-cols-[1fr_360px] h-[calc(100vh-72px)]">
+    <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] h-auto lg:h-[calc(100vh-72px)]">
       {/* Left */}
-      <div className="px-10 py-9 overflow-y-auto border-r border-ink/10">
+      <div className="px-4 sm:px-6 lg:px-10 py-9 overflow-y-auto border-b border-ink/10 lg:border-b-0 lg:border-r lg:pr-0">
         <div className="mb-7">
           <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-amber mb-2">Trip Planner</p>
           <h1 className="font-serif text-[28px] font-light text-ink mb-1">East Africa Safari ✈️</h1>
@@ -83,7 +83,7 @@ export default function PlannerClient() {
       </div>
 
       {/* Right */}
-      <div className="px-7 py-7 overflow-y-auto bg-cream">
+      <div className="px-4 sm:px-6 lg:px-7 py-7 overflow-y-auto bg-cream">
         {/* Map */}
         <div className="bg-gradient-to-br from-[#D4E8DF] to-[#C8DDD4] rounded-[18px] h-[260px] flex items-center justify-center mb-4 relative">
           <div className="text-center">
@@ -120,7 +120,7 @@ export default function PlannerClient() {
         {/* Weather */}
         <div className="bg-white rounded-[18px] border border-ink/10 p-5 mb-4">
           <h3 className="text-[13px] font-semibold text-ink mb-4">🌤️ Weather Forecast</h3>
-          <div className="grid grid-cols-4 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
             {[['☀️','Jul 10','28°C'],['⛅','Jul 11','26°C'],['☀️','Jul 12','30°C'],['🌤️','Jul 13','29°C']].map(([icon,day,temp]) => (
               <div key={day} className="text-center text-xs">
                 <div className="text-2xl mb-1">{icon}</div>

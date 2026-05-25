@@ -21,7 +21,7 @@ export default function SidebarFilters({ type }: SidebarFiltersProps) {
   const filters = type === 'stays' ? STAYS_FILTERS : EXP_FILTERS
 
   return (
-    <aside className="sticky top-[88px] h-fit">
+    <aside className="lg:sticky lg:top-[88px] h-fit">
       {/* Price range */}
       <div className="filter-card">
         <h3>Price {type === 'stays' ? 'per night' : 'per person'}</h3>

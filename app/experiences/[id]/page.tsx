@@ -12,19 +12,19 @@ export default function ExpDetailPage({ params }: { params: { id: string } }) {
   const exp = EXPERIENCES.find((e) => e.id === params.id) ?? EXPERIENCES[0]
 
   return (
-    <div className="max-w-[1200px] mx-auto px-12 py-11">
+    <div className="max-w-[1200px] mx-auto px-6 sm:px-12 py-11">
       <p className="text-[13px] text-muted mb-4">
         <Link href="/" className="text-forest hover:text-forest-light">Home</Link> /{' '}
         <Link href="/experiences" className="text-forest hover:text-forest-light">Experiences</Link> / {exp.title}
       </p>
 
-      <div className="grid grid-cols-[1.85fr_1fr] grid-rows-[230px_230px] gap-2.5 rounded-[22px] overflow-hidden mb-9">
-        <div className="row-span-2 relative"><Image src={exp.img} alt={exp.title} fill className="object-cover" /></div>
-        <div className="relative"><Image src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=500&q=80" alt="" fill className="object-cover" /></div>
-        <div className="relative"><Image src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=500&q=80" alt="" fill className="object-cover" /></div>
+      <div className="grid grid-cols-1 lg:grid-cols-[1.85fr_1fr] lg:grid-rows-[230px_230px] gap-2.5 rounded-[22px] overflow-hidden mb-9">
+        <div className="row-span-2 relative h-[260px] lg:h-auto"><Image src={exp.img} alt={exp.title} fill className="object-cover" /></div>
+        <div className="relative h-[200px] lg:h-auto"><Image src="/picc.jpg" alt="" fill className="object-cover" /></div>
+        <div className="relative h-[200px] lg:h-auto"><Image src="/pic.jpg" alt="" fill className="object-cover" /></div>
       </div>
 
-      <div className="grid grid-cols-[1fr_360px] gap-12 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start">
         <div>
           <span className="inline-block px-3 py-1 rounded-full text-[11px] font-semibold uppercase bg-amber-pale text-amber mb-3">{exp.category}</span>
           <h1 className="font-serif text-[clamp(26px,3vw,38px)] font-light text-ink mb-2">{exp.title}</h1>
@@ -58,7 +58,7 @@ export default function ExpDetailPage({ params }: { params: { id: string } }) {
         </div>
 
         <div>
-          <BookingWidget price={exp.price} unit="person" rating={exp.rating} reviews={exp.reviews} cta="Book Experience" toastMsg="🦁 Experience booked!" />
+          <BookingWidget price={exp.price} unit="person" rating={exp.rating} reviews={exp.reviews} cta="Book Experience" />
           <button className="w-full mt-3 py-3 rounded-full font-semibold text-ink border border-ink/20 hover:bg-ink/5 transition-colors duration-200 text-sm">
             Message the Guide
           </button>

@@ -19,7 +19,7 @@ export function ExpCard({ id, title, category, duration, rating, img, big }: Exp
   return (
     <Link
       href={`/experiences/${id}`}
-      className={`relative rounded-3xl overflow-hidden cursor-pointer block ${big ? 'row-span-2' : ''}`}
+      className={`relative rounded-3xl overflow-hidden cursor-pointer block ${big ? 'lg:row-span-2' : ''}`}
     >
       <div className={`relative overflow-hidden ${big ? 'h-full min-h-[478px]' : 'h-[230px]'}`}>
         <Image src={img} alt={title} fill className="object-cover transition-transform duration-500 hover:scale-[1.04]" sizes="(max-width: 768px) 100vw, 40vw" />
@@ -50,8 +50,8 @@ interface DestCardProps {
 
 export function DestCard({ name, region, stays, img, tags }: DestCardProps) {
   return (
-    <Link href="/stays" className="dest-card block relative" style={{ height: 310 }}>
-      <Image src={img} alt={name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 33vw" />
+    <Link href="/stays" className="dest-card block relative h-[310px]" >
+      <Image src={img} alt={name} fill className="object-cover" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw" />
       <div className="absolute inset-0 bg-card-overlay" />
       <div className="absolute bottom-0 left-0 right-0 p-5">
         <p className="text-[11px] font-semibold tracking-[0.08em] uppercase text-amber-light mb-1">{region}</p>
@@ -77,10 +77,10 @@ interface PageHeroProps {
 
 export function PageHero({ img, breadcrumb, title, sub }: PageHeroProps) {
   return (
-    <div className="relative h-[400px] flex items-end overflow-hidden">
+    <div className="relative h-[300px] md:h-[360px] lg:h-[400px] flex items-end overflow-hidden">
       <Image src={img} alt="" fill className="object-cover" priority sizes="100vw" />
       <div className="absolute inset-0 bg-gradient-to-t from-forest/88 to-black/10" />
-      <div className="relative z-10 px-12 pb-11">
+      <div className="relative z-10 px-6 sm:px-12 pb-11">
         <p className="text-[13px] text-white/45 mb-3.5">
           <Link href="/" className="text-white/65 hover:text-amber-light transition-colors">Home</Link>
           {' / '}{breadcrumb}
@@ -104,7 +104,7 @@ interface SectionHeaderProps {
 
 export function SectionHeader({ label, title, sub, linkLabel, linkHref, dark }: SectionHeaderProps) {
   return (
-    <div className="flex justify-between items-end mb-11">
+    <div className="flex flex-col gap-4 justify-between items-start mb-11 md:flex-row md:items-end">
       <div>
         {label && (
           <p className={`text-[11px] font-semibold tracking-[0.1em] uppercase mb-2.5 ${dark ? 'text-amber-light' : 'text-amber'}`}>{label}</p>

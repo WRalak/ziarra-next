@@ -43,8 +43,8 @@ export default function HomePage() {
       </section>
 
       {/* ── TRUST BAR ── */}
-      <div className="bg-white border-t border-b border-ink/10 py-5 px-12">
-        <div className="flex items-center justify-center gap-12">
+      <div className="bg-white border-t border-b border-ink/10 py-5 px-6 sm:px-12">
+        <div className="flex flex-wrap items-center justify-center gap-6">
           {['🏅 Verified Listings Only','🔒 Secure Payments','💬 24/7 Local Support','🌍 54 African Nations','♻️ Responsible Travel'].map((item) => (
             <div key={item} className="flex items-center gap-2.5 text-sm text-muted font-medium">{item}</div>
           ))}
@@ -52,7 +52,7 @@ export default function HomePage() {
       </div>
 
       {/* ── STAYS ── */}
-      <section className="bg-cream py-[88px] px-12">
+      <section className="bg-cream py-[88px] px-6 sm:px-12">
         <div className="max-w-[1240px] mx-auto">
           <SectionHeader
             label="Where You'll Rest"
@@ -61,14 +61,14 @@ export default function HomePage() {
             linkLabel="Explore all stays →"
             linkHref="/stays"
           />
-          <div className="grid grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
             {STAYS.slice(0, 4).map((s) => <StayCard key={s.id} {...s} />)}
           </div>
         </div>
       </section>
 
       {/* ── EXPERIENCES ── */}
-      <section className="bg-forest py-[88px] px-12">
+      <section className="bg-forest py-[88px] px-6 sm:px-12">
         <div className="max-w-[1240px] mx-auto">
           <SectionHeader
             label="Immersive Experiences"
@@ -78,7 +78,7 @@ export default function HomePage() {
             linkHref="/experiences"
             dark
           />
-          <div className="grid grid-cols-[1.4fr_1fr_1fr] grid-rows-2 gap-[18px]">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr_1fr] gap-[18px]">
             <ExpCard {...EXPERIENCES[0]} big />
             {EXPERIENCES.slice(1, 5).map((e) => <ExpCard key={e.id} {...e} />)}
           </div>
@@ -86,14 +86,14 @@ export default function HomePage() {
       </section>
 
       {/* ── HOW IT WORKS ── */}
-      <section className="bg-warm-white py-[88px] px-12">
+      <section className="bg-warm-white py-[88px] px-4 sm:px-6 lg:px-12">
         <div className="max-w-[920px] mx-auto text-center mb-14">
           <p className="section-label">Simple. Smart. Seamless.</p>
           <h2 className="font-serif text-[clamp(32px,3.8vw,50px)] font-light text-ink tracking-tight">
             Plan your trip in <em className="italic text-forest-light">four steps</em>
           </h2>
         </div>
-        <div className="max-w-[920px] mx-auto grid grid-cols-4 gap-7 relative">
+        <div className="max-w-[920px] mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-7 relative">
           <div className="absolute top-[34px] left-[10%] right-[10%] h-px bg-[repeating-linear-gradient(90deg,rgba(26,23,20,0.10)_0,rgba(26,23,20,0.10)_8px,transparent_8px,transparent_16px)]" />
           {[
             { n: '1', title: 'Discover',       text: 'Search curated stays & experiences filtered to your travel style.', cls: 'bg-amber-pale text-amber border-2 border-amber-light' },
@@ -111,8 +111,8 @@ export default function HomePage() {
       </section>
 
       {/* ── COMMUNITY ── */}
-      <section className="bg-cream py-[88px] px-12">
-        <div className="max-w-[1240px] mx-auto grid grid-cols-2 gap-[72px] items-center">
+      <section className="bg-cream py-[88px] px-6 sm:px-12">
+        <div className="max-w-[1240px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-[72px] items-center">
           <div>
             <p className="section-label">Community-Driven Travel</p>
             <h2 className="font-serif text-[clamp(32px,3.8vw,50px)] font-light text-ink tracking-tight leading-[1.1]">
@@ -142,15 +142,15 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-[18px] overflow-hidden row-span-2"><Image src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400&q=80" alt="" width={400} height={370} className="w-full h-[370px] object-cover" /></div>
-            <div className="rounded-[18px] overflow-hidden"><Image src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=400&q=80" alt="" width={400} height={175} className="w-full h-[175px] object-cover" /></div>
-            <div className="rounded-[18px] overflow-hidden"><Image src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=400&q=80" alt="" width={400} height={175} className="w-full h-[175px] object-cover" /></div>
+            <div className="rounded-[18px] overflow-hidden row-span-2"><Image src="/picc.jpg" alt="" width={400} height={370} className="w-full h-[370px] object-cover" /></div>
+            <div className="rounded-[18px] overflow-hidden"><Image src="/pic.jpg" alt="" width={400} height={175} className="w-full h-[175px] object-cover" /></div>
+            <div className="rounded-[18px] overflow-hidden"><Image src="/picc.jpg" alt="" width={400} height={175} className="w-full h-[175px] object-cover" /></div>
           </div>
         </div>
       </section>
 
       {/* ── DESTINATIONS ── */}
-      <section className="bg-warm-white py-[88px] px-12">
+      <section className="bg-warm-white py-[88px] px-4 sm:px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto">
           <SectionHeader
             label="Top Destinations"
@@ -158,21 +158,21 @@ export default function HomePage() {
             linkLabel="See all →"
             linkHref="/destinations"
           />
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {DESTINATIONS.slice(0, 6).map((d) => <DestCard key={d.name} {...d} />)}
           </div>
         </div>
       </section>
 
       {/* ── TRAVELLER TYPES ── */}
-      <section className="bg-forest py-[88px] px-12">
+      <section className="bg-forest py-[88px] px-4 sm:px-6 lg:px-12">
         <div className="max-w-[1240px] mx-auto text-center mb-10">
           <p className="text-[11px] font-semibold tracking-[0.1em] uppercase text-amber-light mb-4">Built for Every Explorer</p>
           <h2 className="font-serif text-[clamp(32px,3.8vw,46px)] font-light text-white tracking-tight">
             Whoever you are,<br /><em className="italic text-amber-light">Ziarra has you covered</em>
           </h2>
         </div>
-        <div className="max-w-[1240px] mx-auto grid grid-cols-5 gap-3.5">
+        <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5">
           {[
             { icon:'🧭', href:'/community', title:'Solo Travellers',     text:'Safety tools, community matching & solo-friendly stays.' },
             { icon:'👨‍👩‍👧‍👦', href:'/community', title:'Group Travellers',    text:'Shared itineraries, group booking & collaborative planning.' },
@@ -192,8 +192,8 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <div className="bg-amber-pale py-[72px] px-12">
-        <div className="max-w-[880px] mx-auto flex items-center justify-between gap-12">
+      <div className="bg-amber-pale py-[72px] px-6 sm:px-12">
+        <div className="max-w-[880px] mx-auto flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
           <div>
             <p className="section-label">Start Your Journey Today</p>
             <h2 className="font-serif text-[clamp(32px,3.8vw,50px)] font-light text-forest tracking-tight">

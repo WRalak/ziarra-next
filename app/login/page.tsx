@@ -6,7 +6,7 @@ export default function LoginPage() {
   return (
     <div className="grid grid-cols-2 min-h-[calc(100vh-72px)]">
       <div className="relative overflow-hidden">
-        <Image src="https://images.unsplash.com/photo-1535940300484-20b4c6930c7e?w=900&q=80" alt="" fill className="object-cover" />
+        <Image src="/pic.jpg" alt="" fill className="object-cover" />
         <div className="absolute inset-0 bg-gradient-to-br from-forest/80 to-forest/40 flex flex-col justify-end p-[52px]">
           <p className="font-serif text-[28px] font-light text-white leading-[1.35] mb-4">&ldquo;Every great journey begins with a single <em className="italic text-amber-light">step</em> — or one login.&rdquo;</p>
           <p className="text-sm text-white/45">— The Ziarra Community</p>

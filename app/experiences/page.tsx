@@ -11,14 +11,14 @@ export const metadata = { title: 'Experiences — Ziarra' }
 export default function ExperiencesPage() {
   return (
     <>
-      <PageHero
-        img="https://images.unsplash.com/photo-1535940300484-20b4c6930c7e?w=1400&q=80"
-        breadcrumb="Experiences"
-        title={<>Go beyond the <em className="italic text-amber-light">ordinary</em></>}
-        sub="Wildlife safaris, cultural deep-dives, culinary journeys & adventure tours across Africa."
-      />
+     <PageHero
+  img="/pic.jpg"
+  breadcrumb="Experiences"
+  title={<>Go beyond the <em className="italic text-amber-light">ordinary</em></>}
+  sub="Wildlife safaris, cultural deep-dives, culinary journeys & adventure tours across Africa."
+/>
 
-      <div className="grid grid-cols-[272px_1fr] gap-8 px-12 py-11 max-w-[1400px] mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-[272px_1fr] gap-8 px-6 sm:px-12 py-11 max-w-[1400px] mx-auto">
         <SidebarFilters type="experiences" />
 
         <div>
@@ -29,7 +29,7 @@ export default function ExperiencesPage() {
               <option>Recommended</option><option>Price: Low to High</option><option>Highest Rated</option><option>Duration</option>
             </select>
           </div>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
             {EXPERIENCES.map((exp) => (
               <Link key={exp.id} href={`/experiences/${exp.id}`} className="ziarra-card group block">
                 <div className="card-img relative overflow-hidden" style={{ height: 200 }}>

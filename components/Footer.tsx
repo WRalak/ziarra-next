@@ -29,7 +29,7 @@ const cols = [
       { label: 'Trip Planner',   href: '/planner' },
       { label: 'Travel Buddy',   href: '/community' },
       { label: 'Influencer Hub', href: '/community' },
-      { label: 'Events',         href: '/community' },
+          { label: 'Events',         href: '/events' },
     ],
   },
   {
@@ -46,8 +46,8 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer className="bg-ink pt-[72px] pb-10 px-12">
-      <div className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-11 mb-[52px]">
+    <footer className="bg-ink pt-[72px] pb-10 px-4 sm:px-6 lg:px-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-11 mb-[52px]">
         {/* Brand */}
         <div>
           <Link href="/" className="flex items-center gap-2.5 w-fit">
@@ -81,7 +81,7 @@ export default function Footer() {
         ))}
       </div>
 
-      <div className="flex justify-between items-center pt-6 border-t border-white/[0.07] text-[13px] text-white/25">
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center pt-6 border-t border-white/[0.07] text-[13px] text-white/25">
         <div>
           © 2025 Ziarra Travel Ltd &nbsp;·&nbsp;
           <a href="#" className="text-white/25 hover:text-white/60 transition-colors">Privacy Policy</a>

@@ -19,7 +19,7 @@ export default function StayCard({ id, title, location, badge, category, price, 
   return (
     <Link href={`/stays/${id}`} className="ziarra-card group block">
       <div className="card-img relative overflow-hidden" style={{ height: imgHeight }}>
-        <Image src={img} alt={title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 25vw" />
+        <Image src={img} alt={title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw" />
         <span className={`badge ${BADGE_STYLES[badge] ?? 'bg-white text-forest'}`}>{category}</span>
       </div>
       <div className="p-5">
