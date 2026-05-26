@@ -3,46 +3,19 @@ import Link from 'next/link'
 const cols = [
   {
     title: 'Discover',
-    links: [
-      { label: 'Hotels',      href: '/stays' },
-      { label: 'Homestays',   href: '/stays' },
-      { label: 'Camping',     href: '/stays' },
-      { label: 'Glamping',    href: '/stays' },
-      { label: 'Experiences', href: '/experiences' },
-      { label: 'Tours',       href: '/experiences' },
-    ],
+    links: ['Hotels', 'Homestays', 'Camping', 'Glamping', 'Experiences', 'Tours']
   },
   {
     title: 'Destinations',
-    links: [
-      { label: 'East Africa',     href: '/destinations' },
-      { label: 'West Africa',     href: '/destinations' },
-      { label: 'North Africa',    href: '/destinations' },
-      { label: 'Southern Africa', href: '/destinations' },
-      { label: 'Islands',         href: '/destinations' },
-    ],
+    links: ['East Africa', 'West Africa', 'North Africa', 'Southern Africa', 'Islands']
   },
   {
     title: 'Community',
-    links: [
-      { label: 'Travel Stories', href: '/community' },
-      { label: 'Trip Planner',   href: '/planner' },
-      { label: 'Travel Buddy',   href: '/community' },
-      { label: 'Influencer Hub', href: '/community' },
-          { label: 'Events',         href: '/events' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { label: 'About Ziarra',   href: '/about' },
-      { label: 'Partner With Us',href: '/partner' },
-      { label: 'Careers',        href: '/about' },
-      { label: 'Press',          href: '/about' },
-      { label: 'Help Centre',    href: '/about' },
-    ],
-  },
+    links: ['Travel Stories', 'Trip Planner', 'Travel Buddy', 'Influencer Hub', 'Events']
+  }
 ]
+
+const socials = ['Instagram', 'Twitter', 'Facebook', 'YouTube']
 
 export default function Footer() {
   return (
@@ -58,10 +31,10 @@ export default function Footer() {
             Connecting curious souls to Africa's most extraordinary places, people, and moments.
           </p>
           <div className="flex gap-2.5 mt-5">
-            {['📸','🎵','✖️','▶️'].map((icon, i) => (
-              <button key={i} className="w-9 h-9 rounded-[9px] bg-white/[0.07] text-white/50 text-sm hover:bg-white/15 hover:text-white transition-all duration-200">
-                {icon}
-              </button>
+            {socials.map((social) => (
+              <a key={social} href="#" className="w-9 h-9 rounded-[9px] bg-white/[0.07] text-white/50 text-xs font-medium hover:bg-white/15 hover:text-white flex items-center justify-center transition-all duration-200">
+                {social[0]}
+              </a>
             ))}
           </div>
         </div>
@@ -72,9 +45,9 @@ export default function Footer() {
             <h5 className="text-[11px] font-semibold tracking-[0.08em] uppercase text-white/28 mb-4">
               {col.title}
             </h5>
-            {col.links.map((l) => (
-              <Link key={l.label} href={l.href} className="block text-sm text-white/45 mb-2.5 hover:text-white/85 transition-colors duration-200">
-                {l.label}
+            {col.links.map((label) => (
+              <Link key={label} href={`/${label.toLowerCase().replace(/\s+/g, '-')}`} className="block text-sm text-white/45 mb-2.5 hover:text-white/85 transition-colors duration-200">
+                {label}
               </Link>
             ))}
           </div>
@@ -82,13 +55,8 @@ export default function Footer() {
       </div>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center pt-6 border-t border-white/[0.07] text-[13px] text-white/25">
-        <div>
-          © 2026 Ziarra Travel Ltd &nbsp;·&nbsp;
-          <a href="#" className="text-white/25 hover:text-white/60 transition-colors">Privacy Policy</a>
-          &nbsp;·&nbsp;
-          <a href="#" className="text-white/25 hover:text-white/60 transition-colors">Terms of Service</a>
-        </div>
-        <div className="flex gap-3.5 text-white/28">
+        <div>© 2026 Ziarra Travel Ltd · Privacy Policy · Terms of Service</div>
+        <div className="flex gap-3.5">
           {['English','Français','Kiswahili','Português'].map((lang) => (
             <a key={lang} href="#" className="hover:text-white/70 transition-colors">{lang}</a>
           ))}
