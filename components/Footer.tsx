@@ -83,7 +83,7 @@ export default function Footer() {
 
       <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center pt-6 border-t border-white/[0.07] text-[13px] text-white/25">
         <div>
-          © 2025 Ziarra Travel Ltd &nbsp;·&nbsp;
+          © 2026 Ziarra Travel Ltd &nbsp;·&nbsp;
           <a href="#" className="text-white/25 hover:text-white/60 transition-colors">Privacy Policy</a>
           &nbsp;·&nbsp;
           <a href="#" className="text-white/25 hover:text-white/60 transition-colors">Terms of Service</a>
