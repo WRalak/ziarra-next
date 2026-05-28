@@ -10,6 +10,7 @@ const links = [
   { href: '/destinations', label: 'Destinations' },
   { href: '/community',    label: 'Community' },
   { href: '/planner',      label: 'Trip Planner' },
+  { href: '/mobile',       label: 'Mobile App' },
   { href: '/partner',      label: 'Be a Partner' },
   { href: '/about',        label: 'About' },
 ]

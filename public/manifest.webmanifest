@@ -1,0 +1,12 @@
+{
+  "name": "Ziarra",
+  "short_name": "Ziarra",
+  "description": "Discover stays, experiences, community trips, and rewards across Africa.",
+  "start_url": "/mobile",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FDF9F3",
+  "theme_color": "#183326",
+  "orientation": "portrait-primary",
+  "categories": ["travel", "lifestyle"]
+}

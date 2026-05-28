@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Ziarra",
+    "slug": "ziarra",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "ziarra",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#183326",
+      "resizeMode": "cover"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ziarra.app"
+    },
+    "android": {
+      "package": "com.ziarra.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#183326"
+      },
+      "edgeToEdgeEnabled": true
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
